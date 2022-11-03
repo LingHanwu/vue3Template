@@ -3,14 +3,26 @@
 </script>
 
 <template>
-  <div id="nav">
-    <el-button type="primary">Primary</el-button>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+
+  <div>
+    <!-- 头部区域 -->
+    <nav class="header">
+      <span class="title">图书管理系统</span>
+    </nav>
   </div>
-  <router-view />
+
+
 </template>
 
 <style lang="less" scoped>
+.header {
+  height: 60px;
+  line-height: 60px;
+  background-color: white;
 
+  .title {
+    margin: 25px;
+    font-size: 24px;
+  }
+}
 </style>
