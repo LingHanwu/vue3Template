@@ -1,33 +1,22 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 // 输入框数据
 const input = ref('')
 // 表格数据
-const tableData = [
-  {
-    name: '小明',
-    age: '12',
-    address: '北京',
-    phone: '13899008899',
-    sex: '男'
-  },
-  {
-    name: '小明',
-    age: '12',
-    address: '北京',
-    phone: '13899008899',
-    sex: '男'
-  },
-  {
-    name: '小明',
-    age: '12',
-    address: '北京',
-    phone: '13899008899',
-    sex: '男'
-  }
-]
+const tableData = []
 
+const load = () => {
+  fetch('http://localhost:8080/user/list').then(res => res.json()).then(
+    res => {
+      console.log(res)
+      this.tableData = res
+    }
+  )
+}
 
+onMounted(() => {
+  load()
+})
 
 </script>
 
