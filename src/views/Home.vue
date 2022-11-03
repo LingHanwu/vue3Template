@@ -1,10 +1,52 @@
 <script setup>
+import { ref } from 'vue'
+// 输入框数据
+const input = ref('')
+// 表格数据
+const tableData = [
+  {
+    name: '小明',
+    age: '12',
+    address: '北京',
+    phone: '13899008899',
+    sex: '男'
+  },
+  {
+    name: '小明',
+    age: '12',
+    address: '北京',
+    phone: '13899008899',
+    sex: '男'
+  },
+  {
+    name: '小明',
+    age: '12',
+    address: '北京',
+    phone: '13899008899',
+    sex: '男'
+  }
+]
+
+
 
 </script>
 
 <template>
   <div class="home">
-    <h2>home</h2>
+    <!-- 搜索框 -->
+    <div>
+      <el-input style="width:240px" v-model="input" placeholder="请输入名称" />
+      <el-input style="width:240px;margin-left:5px;" v-model="input" placeholder="请输入联系方式" />
+      <el-button style="margin-left:5px;" type="primary">搜索</el-button>
+    </div>
+    <!-- 表格数据 -->
+    <el-table :data="tableData" style="width: 100%">
+      <el-table-column prop="name" label="名称" width="180" />
+      <el-table-column prop="age" label="年龄" width="180" />
+      <el-table-column prop="address" label="地址" width="180" />
+      <el-table-column prop="phone" label="联系方式" />
+      <el-table-column prop="sex" label="男" />
+    </el-table>
   </div>
 </template>
 

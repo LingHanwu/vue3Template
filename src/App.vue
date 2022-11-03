@@ -60,6 +60,7 @@ import { ref } from 'vue'
     overflow: hidden;
     margin-right: 2px;
     background-color: white;
+    min-width: 200px;
   }
 
   // 主体数据
