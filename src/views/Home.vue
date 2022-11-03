@@ -34,7 +34,7 @@ const tableData = [
 <template>
   <div class="home">
     <!-- 搜索框 -->
-    <div>
+    <div class="input">
       <el-input style="width:240px" v-model="input" placeholder="请输入名称" />
       <el-input style="width:240px;margin-left:5px;" v-model="input" placeholder="请输入联系方式" />
       <el-button style="margin-left:5px;" type="primary">搜索</el-button>
@@ -47,9 +47,26 @@ const tableData = [
       <el-table-column prop="phone" label="联系方式" />
       <el-table-column prop="sex" label="男" />
     </el-table>
+    <!-- 分页 -->
+    <div class="pagination">
+      <el-pagination background layout="prev, pager, next" :total="500" />
+    </div>
+
+
   </div>
 </template>
 
 <style lang="less" scoped>
+.home {
+  margin: 20px;
 
+  .input {
+    margin: 20px 0;
+  }
+
+  // 分页
+  .pagination {
+    margin-top: 20px;
+  }
+}
 </style>
