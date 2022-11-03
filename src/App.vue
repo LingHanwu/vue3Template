@@ -1,5 +1,5 @@
-<script setup>
-
+<script setup lang="ts">
+import { ref } from 'vue'
 </script>
 
 <template>
@@ -14,11 +14,21 @@
     <div class="container">
       <!-- 侧边栏导航 -->
       <div class="slider">
-        11
+        <el-menu default-active="$router.path" class="el-menu-vertical-demo" router>
+          <el-menu-item index="home">
+            <template #title>首页</template>
+          </el-menu-item>
+          <el-sub-menu index="1">
+            <template #title>
+              <span>关于页面</span>
+            </template>
+            <el-menu-item index="about">关于详情</el-menu-item>
+          </el-sub-menu>
+        </el-menu>
       </div>
       <!-- 主体数据 -->
       <div class="main">
-
+        <router-view></router-view>
       </div>
     </div>
 
@@ -32,7 +42,7 @@
 .header {
   height: 60px;
   line-height: 60px;
-  background-color: white;
+  background-color: #5bd896;
 
   .title {
     margin: 25px;
@@ -55,7 +65,7 @@
   // 主体数据
   .main {
     flex: 1;
-    background-color: aqua;
+    background-color: white;
   }
 }
 </style>
