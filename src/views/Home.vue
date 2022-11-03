@@ -3,13 +3,13 @@ import { onMounted, ref } from 'vue'
 // 输入框数据
 const input = ref('')
 // 表格数据
-const tableData = []
+const tableData = ref([])
 
 const load = () => {
   fetch('http://localhost:8080/user/list').then(res => res.json()).then(
     res => {
       console.log(res)
-      this.tableData = res
+      tableData.value = res
     }
   )
 }
